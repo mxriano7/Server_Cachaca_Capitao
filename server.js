@@ -23,9 +23,15 @@ app.get('/', (req, res) => {
 });
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://cachacacapitao.netlify.app'); // Permite apenas o domínio específico
-    res.header('Access-Control-Allow-Methods', '*'); // Permite todos os métodos HTTP
-    res.header('Access-Control-Allow-Headers', '*'); // Permite todos os tipos de headers
+    // Define cabeçalhos CORS para permitir a origem específica
+    res.header('Access-Control-Allow-Origin', 'https://cachacascapitao.netlify.app');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); // Métodos permitidos
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Cabeçalhos permitidos
+
+    if (req.method === 'OPTIONS') {
+        return res.sendStatus(200);
+    }
+    
     next();
 });
 

@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 });
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*'); // Permite acesso de qualquer origem
+    res.header('Access-Control-Allow-Origin', 'https://cachacacapitao.netlify.app'); // Permite apenas o domínio específico
     res.header('Access-Control-Allow-Methods', '*'); // Permite todos os métodos HTTP
     res.header('Access-Control-Allow-Headers', '*'); // Permite todos os tipos de headers
     next();

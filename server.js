@@ -362,7 +362,7 @@ app.post('/sendOrder', async (req, res) => {
                     </li>
                 `).join('')}
             </ul>
-            <h3>Tempo de Processamento no Mercado Pago:</h3>
+            <h3>Tempo de Processamento:</h3>
             <ul>
                 <li><strong>PIX:</strong> Processamento em tempo real.</li>
                 <li><strong>Crédito:</strong> Até 2 dias úteis para confirmação.</li>
@@ -507,7 +507,7 @@ app.post('/sendOrder', async (req, res) => {
                 </li>
             `).join('')}
         </ul>
-        <h3>Tempo de Processamento no Mercado Pago:</h3>
+        <h3>Tempo de Processamento:</h3>
                 <ul>
                     <li><strong>PIX:</strong> Processamento em tempo real.</li>
                     <li><strong>Crédito:</strong> Até 2 dias úteis para confirmação.</li>

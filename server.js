@@ -256,7 +256,6 @@ app.post('/sendOrder', async (req, res) => {
         h3 {
             color: #4a2c2a;
             font-size: 22px;
-            margin: 20px 0 10px;
             font-weight: 500;
             border-bottom: 1px solid #ddd;
             padding-bottom: 8px;

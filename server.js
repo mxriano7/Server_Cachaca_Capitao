@@ -301,6 +301,7 @@ app.post('/sendOrder', async (req, res) => {
         color: #552d24;
         }
         a {
+        margin: 20px;
         display: inline-block;
         color: #140f07;
         background-color: snow;
@@ -350,9 +351,7 @@ app.post('/sendOrder', async (req, res) => {
             <p><strong>Endereço para entrega:</strong> ${address}, ${number} - ${city}/${state}</p>
             ${addressComplement ? `<p><strong>Complemento:</strong> ${addressComplement}</p>` : ''}
             <p><strong>Link para pagamento:</strong></p>
-            <br>
             <a href="${initPoint}">Clique aqui para pagar</a>
-            <br>
             <h3>Produtos no Carrinho:</h3>
             <ul>
                 ${cart.map(item => `

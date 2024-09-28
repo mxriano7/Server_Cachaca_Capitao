@@ -300,6 +300,23 @@ app.post('/sendOrder', async (req, res) => {
         .logo {
         color: #552d24;
         }
+        a {
+        display: inline-block;
+        color: #140f07;
+        background-color: snow;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 10px;
+        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+        transition: all 0.3s ease;
+        animation-delay: 2s;
+        }
+        a:hover {
+        background-color: brown;
+        border-radius: 20px;
+        color: snow;
+        }
         @media (max-width: 600px) {
             .container {
                 margin: 20px;
@@ -328,11 +345,14 @@ app.post('/sendOrder', async (req, res) => {
             <p>Abaixo estão os detalhes do seu pedido:</p>
             <hr>
             <p><strong>Status:</strong> Aguardando confirmação do pagamento</p>
-            <p><strong>Total do Pedido:</strong> R$ ${totalAmountNumber.toFixed(2)}</p>
+            <p><strong>Total do Pedido(Frete incluso):</strong> R$ ${totalAmountNumber.toFixed(2)}</p>
             <p><strong>Serviço de Frete:</strong> ${shippingService.name} - R$ ${shippingService.price.toFixed(2)}</p>
             <p><strong>Endereço para entrega:</strong> ${address}, ${number} - ${city}/${state}</p>
             ${addressComplement ? `<p><strong>Complemento:</strong> ${addressComplement}</p>` : ''}
-            <p><strong>Link para pagamento:</strong> <a href="${initPoint}">Clique aqui para pagar</a></p>
+            <p><strong>Link para pagamento:</strong></p>
+            <br>
+            <a href="${initPoint}">Clique aqui para pagar</a>
+            <br>
             <h3>Produtos no Carrinho:</h3>
             <ul>
                 ${cart.map(item => `
@@ -477,7 +497,7 @@ app.post('/sendOrder', async (req, res) => {
         <hr>
         <h3>Detalhes do Pedido:</h3>
         <p><strong>Status:</strong> Aguardando confirmação do pagamento</p>
-        <p><strong>Total do Pedido:</strong> R$ ${totalAmountNumber.toFixed(2)}</p>
+        <p><strong>Total do Pedido(Frete incluso):</strong> R$ ${totalAmountNumber.toFixed(2)}</p>
         <p><strong>Frete:</strong> ${shippingService.name} - R$ ${shippingService.price.toFixed(2)}</p>
         <h3>Itens do Pedido:</h3>
         <ul>
@@ -607,7 +627,7 @@ app.post('/sendContact', (req, res) => {
             border-radius: 0 0 8px 8px;
             border-top: 1px solid #ddd;
         }
-                    .logo {
+        .logo {
         color: #552d24;
         }
         @media (max-width: 600px) {
@@ -704,7 +724,7 @@ app.post('/sendContact', (req, res) => {
             border-radius: 0 0 8px 8px;
             border-top: 1px solid #ddd;
         }
-                    .logo {
+        .logo {
         color: #552d24;
         }
         @media (max-width: 600px) {

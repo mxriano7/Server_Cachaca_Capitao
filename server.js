@@ -31,7 +31,7 @@ app.use((req, res, next) => {
     if (req.method === 'OPTIONS') {
         return res.sendStatus(200);
     }
-    
+
     next();
 });
 
@@ -551,195 +551,219 @@ app.post('/sendContact', (req, res) => {
     const { name, email, message } = req.body;
 
     const emailBodyClient = `
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background-color: #f3f3f3;
-            line-height: 1.6;
-        }
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        background-color: #f3f3f3;
+        line-height: 1.6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        color: #000;
+        max-width: 700px;
+        margin: 20px;
+        padding: 25px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header {
+        background-color: #4a2c2a;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px 8px 0 0;
+        font-size: 26px;
+        font-weight: 600;
+        box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.1);
+        width: 100%;
+    }
+    h3 {
+        color: #4a2c2a;
+        font-size: 22px;
+        margin: 20px 0 10px;
+        font-weight: 500;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 8px;
+        text-align: center;
+    }
+    p {
+        margin: 8px 0;
+        font-size: 16px;
+        text-align: center;
+    }
+    .footer {
+        margin-top: 30px;
+        padding: 15px;
+        text-align: center;
+        font-size: 14px;
+        color: #777;
+        background-color: #f9f9f9;
+        border-radius: 0 0 8px 8px;
+        border-top: 1px solid #ddd;
+        width: 100%;
+    }
+    .logo {
+        color: #552d24;
+    }
+    @media (max-width: 600px) {
         .container {
-            color: #000;
-            max-width: 700px;
-            margin: 40px auto;
-            padding: 25px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
         }
         .header {
-            background-color: #4a2c2a;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            border-radius: 8px 8px 0 0;
-            font-size: 26px;
-            font-weight: 600;
-            box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.1);
+            font-size: 24px;
+            padding: 15px;
         }
         h3 {
-            color: #4a2c2a;
-            font-size: 22px;
-            margin: 20px 0 10px;
-            font-weight: 500;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 8px;
+            font-size: 20px;
         }
         p {
-            margin: 8px 0;
-            font-size: 16px;
-        }
-        .footer {
-            margin-top: 30px;
-            padding: 15px;
-            text-align: center;
             font-size: 14px;
-            color: #777;
-            background-color: #f9f9f9;
-            border-radius: 0 0 8px 8px;
-            border-top: 1px solid #ddd;
         }
-                    .logo {
-        color: #552d24;
-        }
-        @media (max-width: 600px) {
-            .container {
-                margin: 20px;
-                padding: 20px;
-            }
-            .header {
-                font-size: 24px;
-                padding: 15px;
-            }
-            h3 {
-                font-size: 20px;
-            }
-            p {
-                font-size: 14px;
-            }
-        }
+    }
     </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">Solicitação de Contato Recebida</div>
-            <h3>Olá, ${name}!</h3>
-            <p>Recebemos sua solicitação de contato e um atendente entrará em contato com você em até 48 horas.</p>
-            <p><strong>Mensagem enviada:</strong> ${message}</p>
-            <p>Atenciosamente,<br>
-            <strong class="logo">Cachaçaria Fazenda do Engenho<br>"Lar da Cachaça Capitão"</strong></p><br><br>
-            <div class="footer">
-                <p>Atenção: Este é um e-mail automático.<br>
-                Por favor, não responda a este e-mail, pois não monitoramos respostas a mensagens automáticas. Se você tiver dúvidas ou precisar de assistência, entre em contato conosco através dos canais de atendimento disponíveis.<br>
-                Agradecemos pela sua compreensão!</p>
-            </div>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Solicitação de Contato Recebida</div>
+        <h3>Olá, ${name}!</h3>
+        <p>Recebemos sua solicitação de contato e um atendente entrará em contato com você em até 48 horas.</p>
+        <p><strong>Mensagem enviada:</strong> ${message}</p>
+        <p>Atenciosamente,<br>
+        <strong class="logo">Cachaçaria Fazenda do Engenho<br>"Lar da Cachaça Capitão"</strong></p><br><br>
+        <div class="footer">
+            <p>Atenção: Este é um e-mail automático.<br>
+            Por favor, não responda a este e-mail, pois não monitoramos respostas a mensagens automáticas.
+            Se você tiver dúvidas ou precisar de assistência, entre em contato conosco através dos canais de atendimento disponíveis.<br>
+            Agradecemos pela sua compreensão!</p>
         </div>
-    </body>
-    </html>
-    `;
+    </div>
+</body>
+</html>
+`;
 
     const emailBodyAdmin = `
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background-color: #f3f3f3;
-            line-height: 1.6;
-        }
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        background-color: #f3f3f3;
+        line-height: 1.6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        color: #000;
+        max-width: 700px;
+        margin: 20px;
+        padding: 25px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header {
+        background-color: #4a2c2a;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px 8px 0 0;
+        font-size: 26px;
+        font-weight: 600;
+        box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.1);
+        width: 100%;
+    }
+    h3 {
+        color: #4a2c2a;
+        font-size: 22px;
+        margin: 20px 0 10px;
+        font-weight: 500;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 8px;
+        text-align: center;
+    }
+    p {
+        margin: 8px 0;
+        font-size: 16px;
+        text-align: center;
+    }
+    .footer {
+        margin-top: 30px;
+        padding: 15px;
+        text-align: center;
+        font-size: 14px;
+        color: #777;
+        background-color: #f9f9f9;
+        border-radius: 0 0 8px 8px;
+        border-top: 1px solid #ddd;
+        width: 100%;
+    }
+    .logo {
+        color: #552d24;
+    }
+    @media (max-width: 600px) {
         .container {
-            color: #000;
-            max-width: 700px;
-            margin: 40px auto;
-            padding: 25px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
         }
         .header {
-            background-color: #4a2c2a;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            border-radius: 8px 8px 0 0;
-            font-size: 26px;
-            font-weight: 600;
-            box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.1);
+            font-size: 24px;
+            padding: 15px;
         }
         h3 {
-            color: #4a2c2a;
-            font-size: 22px;
-            margin: 20px 0 10px;
-            font-weight: 500;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 8px;
+            font-size: 20px;
         }
         p {
-            margin: 8px 0;
-            font-size: 16px;
-        }
-        .footer {
-            margin-top: 30px;
-            padding: 15px;
-            text-align: center;
             font-size: 14px;
-            color: #777;
-            background-color: #f9f9f9;
-            border-radius: 0 0 8px 8px;
-            border-top: 1px solid #ddd;
         }
-                    .logo {
-        color: #552d24;
-        }
-        @media (max-width: 600px) {
-            .container {
-                margin: 20px;
-                padding: 20px;
-            }
-            .header {
-                font-size: 24px;
-                padding: 15px;
-            }
-            h3 {
-                font-size: 20px;
-            }
-            p {
-                font-size: 14px;
-            }
-        }
+    }
     </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">Novo Contato Recebido</div>
-            <h3>Dados do Contato:</h3>
-            <p><strong>Nome:</strong> ${name}</p>
-            <p><strong>E-mail:</strong> ${email}</p>
-            <p><strong>Mensagem:</strong> ${message}</p>
-            <div class="footer">
-                <p>Atenção: Este é um e-mail automático.<br>
-                Por favor, não responda a este e-mail, pois não monitoramos respostas a mensagens automáticas. Se você tiver dúvidas ou precisar de assistência, entre em contato conosco através dos canais de atendimento disponíveis.<br>
-                Agradecemos pela sua compreensão!</p>
-            </div>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Novo Contato Recebido</div>
+        <h3>Dados do Contato:</h3>
+        <p><strong>Nome:</strong> ${name}</p>
+        <p><strong>E-mail:</strong> ${email}</p>
+        <p><strong>Mensagem:</strong> ${message}</p>
+        <div class="footer">
+            <p>Atenção: Este é um e-mail automático.<br>
+            Por favor, não responda a este e-mail, pois não monitoramos respostas a mensagens automáticas.
+            Se você tiver dúvidas ou precisar de assistência, entre em contato conosco através dos canais de atendimento disponíveis.<br>
+            Agradecemos pela sua compreensão!</p>
         </div>
-    </body>
-    </html>
-    `;
+    </div>
+</body>
+</html>
+`;
 
     // Configuração do envio do e-mail para o cliente.
     const mailOptionsClient = {

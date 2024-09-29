@@ -300,7 +300,6 @@ app.post('/sendOrder', async (req, res) => {
         color: #552d24;
         }
         a {
-        display: inline-block;
         color: #140f07;
         background-color: snow;
         padding: 10px 20px;
@@ -309,11 +308,9 @@ app.post('/sendOrder', async (req, res) => {
         border-radius: 10px;
         box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
         transition: all 0.3s ease;
-        animation-delay: 2s;
         }
         a:hover {
         background-color: brown;
-        border-radius: 20px;
         color: snow;
         }
         @media (max-width: 600px) {
@@ -348,9 +345,11 @@ app.post('/sendOrder', async (req, res) => {
             <p><strong>Serviço de Frete:</strong> ${shippingService.name} - R$ ${shippingService.price.toFixed(2)}</p>
             <p><strong>Endereço para entrega:</strong> ${address}, ${number} - ${city}/${state}</p>
             ${addressComplement ? `<p><strong>Complemento:</strong> ${addressComplement}</p>` : ''}
+            <hr>
             <p><strong>Link para pagamento:</strong>
             <a href="${initPoint}">Clique aqui para pagar</a>
             </p>
+            <hr>
             <h3>Produtos no Carrinho:</h3>
             <ul>
                 ${cart.map(item => `

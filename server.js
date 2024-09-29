@@ -19,7 +19,26 @@ app.use(bodyParser.json());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('Olá, Vercel!');
+    res.send(`
+        <html>
+            <head>
+                <title>Servidor Cachaça Capitão</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        background-color: #552d24;
+                        text-align: center;
+                        color: snow;
+                        padding: 50px;
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>Servidor Cachaça Capitão</h1>
+                <p>O servidor está online e pronto para receber requisições!</p>
+            </body>
+        </html>
+    `);
 });
 
 app.use((req, res, next) => {

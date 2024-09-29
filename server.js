@@ -343,10 +343,13 @@ app.post('/sendOrder', async (req, res) => {
             <p><strong>Status:</strong> Aguardando confirmação do pagamento</p>
             <p><strong>Total do Pedido(Frete incluso):</strong> R$ ${totalAmountNumber.toFixed(2)}</p>
             <p><strong>Serviço de Frete:</strong> ${shippingService.name} - R$ ${shippingService.price.toFixed(2)}</p>
-            <p><strong>Endereço para entrega:</strong> ${address}, ${number} - ${city}/${state}</p>
+            <p><strong>Endereço para entrega:</strong>
+            <br>
+            ${address}, ${number} - ${city}/${state}</p>
             ${addressComplement ? `<p><strong>Complemento:</strong> ${addressComplement}</p>` : ''}
             <hr>
             <p><strong>Link para pagamento:</strong>
+            <br>
             <a href="${initPoint}">Clique aqui para pagar</a>
             </p>
             <hr>

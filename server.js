@@ -300,6 +300,7 @@ app.post('/sendOrder', async (req, res) => {
         color: #552d24;
         }
         a {
+        display: inline-block;
         color: #140f07;
         background-color: snow;
         padding: 10px 20px;

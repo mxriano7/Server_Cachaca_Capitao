@@ -164,7 +164,7 @@ app.post('/calculateFreight', async (req, res) => {
             Accept: 'application/json',
             'Content-Type': 'application/json',
             Authorization: `Bearer ${process.env.ME_TOKEN}`,
-            'User-Agent': 'API Cachaça Capitão (paulo.cemf2018@gmail.com)'
+            'User-Agent': 'API Cachaça Capitão (paulomarianodevgmail.com)'
         },
         data: {
             from: { postal_code: '37310000' },

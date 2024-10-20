@@ -372,7 +372,7 @@ app.post('/sendOrder', async (req, res) => {
             <p>Agradecemos por escolher a Cachaçaria Fazenda do Engenho!</p>
             <p>Abaixo estão os detalhes do seu pedido:</p>
             <hr>
-            <p><strong>Status:</strong> Aguardando confirmação do pagamento</p>
+            <p><strong>Status:</strong> Aguardando confirmação do pagamento...</p>
             <p><strong>Total do Pedido(Frete incluso):</strong> R$ ${totalAmountNumber.toFixed(2)}</p>
             <p><strong>Serviço de Frete:</strong> ${shippingService.name} - R$ ${shippingService.price.toFixed(2)}</p>
             <p><strong>Endereço para entrega:</strong>
@@ -531,7 +531,7 @@ app.post('/sendOrder', async (req, res) => {
         ${addressComplement ? `<p><strong>Complemento:</strong> ${addressComplement}</p>` : ''}
         <hr>
         <h3>Detalhes do Pedido:</h3>
-        <p><strong>Status:</strong> Aguardando confirmação do pagamento</p>
+        <p><strong>Status:</strong> Aguardando confirmação do pagamento...</p>
         <p><strong>Total do Pedido(Frete incluso):</strong> R$ ${totalAmountNumber.toFixed(2)}</p>
         <p><strong>Frete:</strong> ${shippingService.name} - R$ ${shippingService.price.toFixed(2)}</p>
         <h3>Itens do Pedido:</h3>

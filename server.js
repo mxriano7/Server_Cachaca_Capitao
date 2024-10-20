@@ -306,7 +306,7 @@ app.post('/sendOrder', async (req, res) => {
         }
         li strong {
             display: block;
-            color: #333;
+            color: #552d24;
             margin-bottom: 4px;
         }
         hr {
@@ -475,7 +475,7 @@ app.post('/sendOrder', async (req, res) => {
         }
         li strong {
             display: block;
-            color: #333;
+            color: #552d24;
             margin-bottom: 4px;
         }
         hr {

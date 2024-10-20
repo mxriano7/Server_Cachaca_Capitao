@@ -282,7 +282,7 @@ app.post('/sendOrder', async (req, res) => {
             box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.1);
         }
         h3 {
-            color: #4a2c2a;
+            color: #552d24;
             font-size: 22px;
             font-weight: 500;
             border-bottom: 1px solid #ddd;
@@ -450,7 +450,7 @@ app.post('/sendOrder', async (req, res) => {
             box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.1);
         }
         h3 {
-            color: #4a2c2a;
+            color: #552d24;
             font-size: 22px;
             margin: 20px 0 10px;
             font-weight: 500;
@@ -637,7 +637,7 @@ app.post('/sendContact', (req, res) => {
             box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.1);
         }
         h3 {
-            color: #4a2c2a;
+            color: #552d24;
             font-size: 22px;
             margin: 20px 0 10px;
             font-weight: 500;
@@ -734,7 +734,7 @@ app.post('/sendContact', (req, res) => {
             box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.1);
         }
         h3 {
-            color: #4a2c2a;
+            color: #552d24;
             font-size: 22px;
             margin: 20px 0 10px;
             font-weight: 500;

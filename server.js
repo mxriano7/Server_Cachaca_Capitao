@@ -292,6 +292,9 @@ app.post('/sendOrder', async (req, res) => {
             margin: 8px 0;
             font-size: 16px;
         }
+        p strong {
+        color: #552d24;
+        }
         ul {
             list-style-type: none;
             padding: 0;
@@ -334,7 +337,7 @@ app.post('/sendOrder', async (req, res) => {
         padding: 10px 20px;
         text-decoration: none;
         font-weight: bold;
-        border-radius: 10px;
+        border-radius: 0 0 10px 10px;
         box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
         transition: all 0.3s ease;
         }
@@ -460,6 +463,9 @@ app.post('/sendOrder', async (req, res) => {
         p {
             margin: 8px 0;
             font-size: 16px;
+        }
+        p strong {
+        color: #552d24;
         }
         ul {
             list-style-type: none;
@@ -648,6 +654,9 @@ app.post('/sendContact', (req, res) => {
             margin: 8px 0;
             font-size: 16px;
         }
+        p strong {
+        color: #552d24;
+        }
         .footer {
             margin-top: 30px;
             padding: 15px;
@@ -744,6 +753,9 @@ app.post('/sendContact', (req, res) => {
         p {
             margin: 8px 0;
             font-size: 16px;
+        }
+        p strong {
+        color: #552d24;
         }
         .footer {
             margin-top: 30px;

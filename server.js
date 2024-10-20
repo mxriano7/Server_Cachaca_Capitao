@@ -399,7 +399,7 @@ app.post('/sendOrder', async (req, res) => {
                 <li><strong>Crédito:</strong> Até 2 dias úteis para confirmação.</li>
                 <li><strong>Boleto:</strong> Até 3 dias úteis para compensação.</li>
                 <li><strong>Débito:</strong> Processamento em tempo real.</li>
-                <li><strong>Após a confirmação do pagamento, você receberá um e-mail adicional com a confirmação do pedido e o envio será realizado dentro de até 3 dias úteis.</strong></li>
+                <li><strong>Após a confirmação do pagamento o envio será realizado dentro de até 3 dias úteis.</strong></li>
             </ul>
             <div class="footer">
                 <p>Agradecemos pela sua confiança em nossos serviços. Estamos à disposição para qualquer necessidade e esperamos atendê-lo novamente em breve.</p><br><br>
@@ -546,7 +546,9 @@ app.post('/sendOrder', async (req, res) => {
                     <li><strong>Débito:</strong> Processamento em tempo real.</li>
                 </ul>
         <div class="footer">
-            <p><strong>Após a confirmação do pagamento, você receberá um e-mail adicional com a confirmação do pedido e o envio deve ser realizado dentro de até 3 dias úteis.</strong></p>
+            <p><strong>Após a confirmação do pagamento o envio deve ser realizado dentro de até 3 dias úteis.
+            <br>
+            Verifique seu aplicativo do Mercado Pago para acompanhar o status do pagamento.</strong></p>
         </div>
     </div>
     </body>

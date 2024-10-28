@@ -21,23 +21,46 @@ app.use(express.json());
 app.get('/', (req, res) => {
     res.send(`
         <html>
-            <head>
-                <title>Servidor Cachaça Capitão</title>
-                <style>
-                    body {
-                        font-family: Arial, sans-serif;
-                        background-color: #552d24;
-                        text-align: center;
-                        color: snow;
-                        padding: 50px;
-                    }
-                </style>
-            </head>
-            <body>
-                <h1>Servidor Cachaça Capitão</h1>
-                <p>O servidor está online e pronto para receber requisições!</p>
-            </body>
-        </html>
+    <head>
+        <link rel="icon" type="image/png" href="#">
+        <title>Servidor Cachaça Capitão</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #552d24;
+                text-align: center;
+                color: snow;
+                padding: 50px;
+            }
+            #mainContent a {
+                border: 2px solid snow;
+                display: inline-block;
+                color: #140f07;
+                background-color: snow;
+                padding: 10px 20px;
+                text-decoration: none;
+                font-weight: bold;
+                border-radius: 10px;
+                box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+                transition: all 0.3s ease;
+                animation-delay: 2s;
+                margin-top: 20px;
+            }
+            #mainContent a:hover {
+                background-color: brown;
+                border-radius: 20px;
+                color: snow;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="mainContent">
+            <h1>Servidor Cachaça Capitão</h1>
+            <p>O servidor está online e pronto para receber requisições!</p>
+            <a href="https://cachacascapitao.com.br">Visite cachacascapitao.com.br</a>
+        </div>
+    </body>
+</html>
     `);
 });
 

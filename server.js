@@ -99,14 +99,10 @@ const transporter = nodemailer.createTransport({
 });
 
 app.get('/proxy-viacep', async (req, res) => {
-    const cep = req.query.cep;
-    try {
-        const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-        const data = await response.json();
-        res.json(data);
-    } catch (error) {
-        res.status(500).json({ error: 'Erro ao buscar endereço' });
-    }
+    const cep = req.query.cep; // CEP enviado pelo front-end
+    const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+    const data = await response.json();
+    res.json(data); // Retorna os dados para o navegador
 });
 
 // Rota para calcular o frete do pedido.
